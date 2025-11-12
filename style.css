@@ -1,0 +1,214 @@
+body {
+	padding: 2rem;
+	font-family: -apple-system, BlinkMacSystemFont, "Arial", sans-serif;
+}
+
+h1 {
+	font-size: 16px;
+	font-style: italic;
+	margin-top: 0;
+}
+
+#heroh2 {
+	font-style: italic;
+}
+
+p {
+	color: rgb(107, 114, 128);
+	font-size: 15px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+}
+
+.card {
+	max-width: 620px;
+	margin: 0 auto;
+	padding: 16px;
+	border: 1px solid lightgray;
+	border-radius: 16px;
+}
+
+.card p:last-child {
+	margin-bottom: 0;
+}
+
+#heroh1 {
+	font-size: 6px;
+	margin-top: 0;
+}
+
+#joinbtn {
+	font-size: 12px;
+}
+
+
+/* Custom styles for FAQ page */
+.faq-toggle.active i {
+    transform: rotate(180deg);
+}
+
+.faq-content {
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.faq-content.show {
+    max-height: 500px;
+}
+
+/* Animation for FAQ items */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bg-white {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.bg-white:nth-child(1) { animation-delay: 0.1s; }
+.bg-white:nth-child(2) { animation-delay: 0.2s; }
+.bg-white:nth-child(3) { animation-delay: 0.3s; }
+.bg-white:nth-child(4) { animation-delay: 0.4s; }
+.bg-white:nth-child(5) { animation-delay: 0.5s; }
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Policy card hover effect */
+.policy-card {
+    transition: transform 0.3s ease;
+}
+
+.policy-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Section anchor offset for fixed navbar */
+section {
+    scroll-margin-top: 100px;
+}
+
+/* Custom bullet points for policy lists */
+.policy-list {
+    list-style-type: none;
+    padding-left: 1.5rem;
+}
+
+.policy-list li {
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.policy-list li::before {
+    content: "•";
+    color: #4f46e5;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 0;
+}
+
+/* Custom styles that can't be done with Tailwind */
+.star-rating {
+    display: inline-flex;
+    direction: rtl; /* Right to left for star hover effect */
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    color: #d1d5db; /* Default gray color for stars */
+    font-size: 2rem;
+    padding: 0 0.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: #f59e0b; /* Amber color for selected/hovered stars */
+}
+
+.star-rating input:checked + label {
+    color: #f59e0b; /* Amber color for selected star */
+}
+
+/* Animation for submitted reviews */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.review-card {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Custom focus styles */
+input:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+}
+
+/* Animation for form elements */
+input, button {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Google Sign-In button custom styles */
+.g_id_signin iframe {
+    width: 100% !important;
+    height: 44px !important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Custom focus styles */
+input:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* Animation for form elements */
+input, button {
+    transition: all 0.2s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .auth-container {
+        padding: 1.5rem;
+    }
+}
+
+#bodycreate{
+    background-image: url(pictures/Logo.jpg);
+}
+

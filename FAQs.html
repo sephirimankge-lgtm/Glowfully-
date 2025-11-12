@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </title>FAQs</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+
+</head>
+
+
+<body class="bg-gray-50 min-h-screen">
+    <custom-header></custom-header>
+    
+    <main class="container mx-auto px-4 py-12 max-w-4xl">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Find answers to common questions about our products and services.</p>
+        </div>
+
+        <div class="space-y-6">
+            <!-- FAQ Item 1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+                <button class="faq-toggle w-full flex justify-between items-center p-6 focus:outline-none" id="question">
+                    <h3 class="text-xl font-semibold text-gray-800">Are Glowfully products natural?</h3>
+                    <i data-feather="chevron-down" class="text-gray-500 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content px-6 pb-12 hidden" id="answer">
+                    <p class="text-gray-600">Yes! We use high-quality, skin-safe ingredients — soy wax, plant-based oils, and gentle fragrance blends.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+                <button class="faq-toggle w-full flex justify-between items-center p-6 focus:outline-none" id="question2">
+                    <h3 class="text-xl font-semibold text-gray-800">Can I reuse my jars or bottles?</h3>
+                    <i data-feather="chevron-down" class="text-gray-500 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content px-6 pb-12 hidden" id="answer2">
+                    <p class="text-gray-600">Absolutely. Bring back your empties for a refill or discount!</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+                <button class="faq-toggle w-full flex justify-between items-center p-6 focus:outline-none" id="question3">
+                    <h3 class="text-xl font-semibold text-gray-800">Do you offer gift sets or corporate packages?</h3>
+                    <i data-feather="chevron-down" class="text-gray-500 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content px-6 pb-12 hidden" id="answer3">
+                    <p class="text-gray-600">Yes. We curate self-care gifts for individuals and corporate wellness programs.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+                <button class="faq-toggle w-full flex justify-between items-center p-6 focus:outline-none" id="question4">
+                    <h3 class="text-xl font-semibold text-gray-800">How does coaching work?</h3>
+                    <i data-feather="chevron-down" class="text-gray-500 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content px-6 pb-12 hidden" id="answer4">
+                    <p class="text-gray-600">Sessions are done virtually or in person. We start with your personalized Glow Map to set realistic goals.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+                <button class="faq-toggle w-full flex justify-between items-center p-6 focus:outline-none" id="question5">
+                    <h3 class="text-xl font-semibold text-gray-800">How are payments handled?</h3>
+                    <i data-feather="chevron-down" class="text-gray-500 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content px-6 pb-12 hidden" id="answer5">
+                    <p class="text-gray-600">Monthly or recurring, paid upfront via Yoco, EFT, or PayFast. Cancellations for recurring plans must be made at least 2 weeks in advance.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 text-center">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Still have questions?</h2>
+            <p class="text-gray-600 mb-6">Our support team is happy to help with any other questions you might have.</p>
+            <a href="contact.html" class="inline-flex items-center px-6 py-3 bg-pink-600 text-white font-medium rounded-lg hover:bg-pink-800 transition-colors duration-300">
+                <i data-feather="mail" class="mr-2"></i>
+                Contact Support
+            </a>
+        </div>
+    </main>
+
+    <div>
+        <button id="homebtn" class="bg-yellow-900 hover:bg-pink-600 text-white font-bold py-3 px-3 rounded-full transition duration-300 transform hover:scale-105">
+            <a href="index.html">Home</a>
+        </button> 
+    </div>
+
+
+    <script>
+        // FAQs toggle
+        document.getElementById('question').addEventListener('click', function() {
+            const faq = document.getElementById('answer');
+            faq.classList.toggle('hidden');
+        });
+        document.getElementById('question2').addEventListener('click', function() {
+            const faq = document.getElementById('answer2');
+            faq.classList.toggle('hidden');
+        });
+        document.getElementById('question3').addEventListener('click', function() {
+            const faq = document.getElementById('answer3');
+            faq.classList.toggle('hidden');
+        });
+        document.getElementById('question4').addEventListener('click', function() {
+            const faq = document.getElementById('answer4');
+            faq.classList.toggle('hidden');
+        });
+        document.getElementById('question5').addEventListener('click', function() {
+            const faq = document.getElementById('answer5');
+            faq.classList.toggle('hidden');
+        });
+        document.getElementById('question6').addEventListener('click', function() {
+            const faq = document.getElementById('answer6');
+            faq.classList.toggle('hidden');
+        });
+
+
+
+    </script>
+
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+
+
+    
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowfully Living | Shop with us</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(300deg, #645308 0%, #fbfce4 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #ec4899;
+            transition: width 0.3s ease;
+        .italic {
+            font-style: italic;
+        }
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <img src="pictures/GlowfullyLiving.jpg" alt="Glowfully" class="h-12 w-12 rounded-full">
+                    <span class="text-2xl font-bold text-gray-800">Glowfully Living</span>
+                </div>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-pink-500">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-pink-500">Products-Services</a>
+                    <a href="about.html" class="text-gray-700 hover:text-pink-500">About</a>
+                    <a href="testimonials.html" class="text-gray-700 hover:text-pink-500">Reviews</a>
+                    <a href="contact.html" class="nav-link text-gray-700 hover:text-pink-500">Contact</a>
+                </div>
+                <button id="loginbtn" class="bg-gray-500 hover:bg-pink-600 text-white font-bold py-0.8 px-3 rounded-full transition duration-300 transform hover:scale-105">
+                    <a href="login.html">Login</a>
+                </button>
+                <button class="lg:hidden focus:outline-none" id="menu-btn">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="hidden lg:hidden bg-white py-2 px-4" id="mobile-menu">
+            <a href="index.html" class="block py-2 text-gray-700 hover:text-pink-500">Home</a>
+            <a href="Products & Services.html" class="block py-2 text-gray-700 hover:text-pink-500">Products-Services</a>
+            <a href="about.html" class="block py-2 text-gray-700 hover:text-pink-500">About</a>
+            <a href="testimonials.html" class="block py-2 text-gray-700 hover:text-pink-500">Reviews</a>
+            <a href="contact.html" class="block py-2 text-gray-700 hover:text-pink-500">Contact</a>
+        </div>
+    </nav>
+
+ <!-- Hero Section -->
+    <section class="hero-gradient py-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">GLOWFULLY🌺</h1>
+                    <h2 class="italic text-2xl md:text-3xl font-bold text-gray-800 mb-3">Let’s Glow Together</h2>
+                    <p class="text-lg text-gray-600 mb-8">Ready to start your wellness journey or simply bring calm into your day?
+                                    💛 Explore our handcrafted self-care range or book your personalized coaching session.
+                    </p>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <img src="pictures/Picture 8.jpg" alt="Self-care" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+   <!-- Footer -->
+    <footer class="bg-yellow-800 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-5 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Glowfully Living</h3>
+                    <p class="text-gray-400">Your premier destination for glow, beauty, and wellness services.</p><br>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://www.facebook.com/share/1BphN99Bqr/" class="text-gray-400 hover:text-pink-500 transition">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.instagram.com/glowfully.living?igsh=MTJhajkzeXp3NXlmdA==" class="text-gray-400 hover:text-pink-500 transition">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.x.com" class="text-gray-400 hover:text-pink-500 transition">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://wa.me/qr/RTRIIOP3V2TYD1" class="text-gray-400 hover:text-pink-500 transition">
+                            <ion-icon class="w-5 h-5" name="logo-whatsapp"></ion-icon> 
+                        </a>
+                        <a href="https://www.youtube.com" class="text-gray-400 hover:text-pink-500 transition">
+                            <ion-icon class="w-5 h-5" name="logo-youtube"></ion-icon>
+                        </a>
+                        <a href="https://www.tiktok.com/@glowfully.living?_t=ZS-90x2dlV8Trw&_r=1" class="text-gray-400 hover:text-pink-500 transition">
+                            <ion-icon class="w-5 h-5" name="logo-tiktok"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-2">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-pink-500 transition">Home</a></li>
+                        <li><a href="Products & Services.html" class="text-gray-400 hover:text-pink-500 transition">Products-Services</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-pink-500 transition">About Us</a></li>
+                        <li><a href="testimonials.html" class="text-gray-400 hover:text-pink-500 transition">Reviews</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-pink-500 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-2">Customer Service</h4>
+                    <ul class="space-y-2">
+                        <li><a href="FAQs.html" class="text-gray-400 block">FAQs</a></li>
+                        <li><a href="shipping.html" class="text-gray-400 block">Shipping Policy</a></li>
+                        <li><a href="return & refund.html" class="text-gray-400 block">Return Policy</a></li>
+                        <li><a href="privacy.html" class="text-gray-400 block">Privacy Policy</a></li>
+                        <li><a href="Ts & Cs.html" class="text-gray-400 block">Ts & Cs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-2">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for special offers and tips.</p>
+                    <button id="joinbtn" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-3 rounded-full transition duration-300 transform hover:scale-105">
+                            <a href="https://2fmc5m.share-eu1.hsforms.com/2OvKuvRDVSdCPApRLRgAerg">Join Now</a>
+                    </button> 
+                </div>
+                <div>
+                    <ion-icon name="logo-paypal"></ion-icon>
+                    <ion-icon name="logo-alipay"></ion-icon>
+                    <ion-icon name="logo-apple"></ion-icon>
+                    <ion-icon name="logo-amazon"></ion-icon>
+                    <ion-icon name="wallet"></ion-icon>
+                    <ion-icon name="card"></ion-icon>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; Glowfully Living is a brand of ImageFever Branding (Pty) Ltd (Reg. No: 2015/377276/07), trading as Glowfully Living. All rights reserved.</p>
+                <span class="text-xs italic ">Disclaimer: Products are for external use only. Wellness coaching offers lifestyle guidance, not medical treatment.</span>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Initialize AOS and Feather Icons
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            feather.replace();
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
