@@ -106,7 +106,7 @@ Our goal is to help people glow fully — mind, body, and soul — through inten
                     </button>
                 </div>
                 <div class="md:w-1/2" data-aos="fade-left">
-                    <img src="pictures/Picture 7.jpg" alt="Self-care" class="rounded-lg shadow-xl">
+                    <img src="pictures/Picture 4.jpg" alt="Self-care" class="rounded-lg shadow-xl">
                 </div>
             </div>
         </div>
@@ -272,6 +272,13 @@ Our goal is to help people glow fully — mind, body, and soul — through inten
         document.getElementById('menu-btn').addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
+        });
+
+        //Add alert to shop now button
+        document.querySelectorAll('.hero-gradient button a').forEach(button => {
+            button.addEventListener('click', function(event) {
+                alert('You are being redirected to our Shopify store, enjoy your shopping spree.');
+            });
         });
 
         // Initialize AOS and Feather Icons

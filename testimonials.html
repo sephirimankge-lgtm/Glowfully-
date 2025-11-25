@@ -126,7 +126,7 @@
                 <!-- Testimonial 1 -->
                 <div class="testimonial-card bg-gray-50 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="100">
                     <div class="flex items-center mb-4">
-                        <img class="w-12 h-12 rounded-full mr-4" src="pictures/Picture 8.jpg" alt="client.">
+                        <ion-icon name="cart" class="w-10 h-10 text-purple-800"></ion-icon>
                         <div>
                             <h4 class="font-bold text-gray-800">Joy M</h4>
                             <div class="flex text-yellow-400">
@@ -144,7 +144,7 @@
                 <!-- Testimonial 2 -->
                 <div class="testimonial-card bg-gray-50 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="200">
                     <div class="flex items-center mb-4">
-                        <img class="w-12 h-12 rounded-full mr-4" src="pictures/Picture 8.jpg" alt="Client.">
+                        <ion-icon name="cart" class="w-10 h-10 text-purple-800"></ion-icon>
                         <div>
                             <h4 class="font-bold text-gray-800">Nadia P</h4>
                             <div class="flex text-yellow-400">
@@ -162,7 +162,7 @@
                 <!-- Testimonial 3 -->
                 <div class="testimonial-card bg-gray-50 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="300">
                     <div class="flex items-center mb-4">
-                        <img class="w-12 h-12 rounded-full mr-4" src="pictures/Picture 8.jpg" alt="Client">
+                        <ion-icon name="cart" class="w-10 h-10 text-purple-800"></ion-icon>
                         <div>
                             <h4 class="font-bold text-gray-800">Palesa M</h4>
                             <div class="flex text-yellow-400">
@@ -265,6 +265,13 @@
         document.getElementById('menu-btn').addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
+        });
+
+        //Add alert to shop now button
+        document.querySelectorAll('.hero-gradient button a').forEach(button => {
+            button.addEventListener('click', function(event) {
+                alert('You are being redirected to our Shopify store, enjoy your shopping spree.');
+            });
         });
 
         // Initialize AOS and Feather Icons

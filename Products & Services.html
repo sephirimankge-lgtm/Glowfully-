@@ -144,13 +144,13 @@
         <section class="mb-12">
             <h2 class="text-3xl font-bold text-gray-800 mt-6 mb-6">Book Glowfully </h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <a href="contact.html" class="category-card bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
+                <a href="contact.html" class="services bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
                     <img src="pictures/wellness-coaching-session.png" alt="Wellness" class="w-full h-38 object-cover">
                     <div class="p-4">
                         <h3 class="font-medium text-center">Personalized Wellness Coaching</h3>
                     </div>
                 </a>
-                <a href="contact.html" class="category-card bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
+                <a href="contact.html" class="services bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
                     <img src="pictures/healthy-lifestyle-routines.png" alt="Routine" class="w-full h-38 object-cover">
                     <div class="p-4">
                         <h3 class="font-medium text-center">Glow Routine Program</h3>
@@ -235,6 +235,14 @@
         document.getElementById('menu-btn').addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
+        });
+
+        //Add alert to category cards
+        const categoryCards = document.querySelectorAll('.category-card');
+        categoryCards.forEach(card => {
+            card.addEventListener('click', () => {
+                alert('Redirecting to our Shopify store, enjoy your shopping spree!');
+            });
         });
 
         // Initialize AOS and Feather Icons
