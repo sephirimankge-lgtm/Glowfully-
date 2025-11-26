@@ -10,7 +10,8 @@
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body class="bg-gray-50 min-h-screen">
-    <custom-header></custom-header>
+    <custom-header></custom>
+    <a href="index.html" class="text-pink-900 hover:text-pink-500 transition">Homepage</a>
     
     <main class="container mx-auto px-4 py-12">
         <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-md overflow-hidden p-8">
@@ -55,16 +56,13 @@
                 </div>
             </div>
         </div>
-        <div>
-            <button id="homebtn" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-1 px-6 rounded-full transition duration-300 transform hover:scale-105">
-                <a href="index.html">Home</a>
-            </button>
-        </div>
     </main>
     
     <custom-footer></custom-footer>
     
-
+    <script> 
+        reviewsContainer.appendChild(reviewCard);
+    </script>
     <script src="script.js"></script>
     <script>feather.replace();</script>
 

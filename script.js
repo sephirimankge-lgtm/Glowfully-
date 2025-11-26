@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const loadingReviews = document.getElementById('loadingReviews');
     
     // Mock data for recent reviews
-    const mockReviews = [
+    const oldReviews = [
         {
             name: "Joy M",
             rating: 5,
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load mock reviews
     setTimeout(() => {
         loadingReviews.remove();
-        mockReviews.forEach(review => {
+        oldReviews.forEach(review => {
             addReviewToDOM(review);
         });
     }, 1000);
@@ -102,10 +102,10 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        if (selectedRating === 0) {
-            alert('Please select a rating before submitting.');
-            return;
-        }
+        //if (selectedRating === 0) {
+            //alert('Please select a rating before submitting.');
+            //return;
+        //}
         
         const newReview = {
             name: isAnonymous ? 'Anonymous' : (name || 'Anonymous'),
@@ -151,15 +151,8 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         
         reviewsContainer.prepend(reviewCard);
+        reviewsContainer.appendChild(reviewCard);
 
-        //send review to server (mock)
-        windows.alert('Review submitted:', review)
-
-        //sent review to email here (mock)
-
-        //send review to google reviews here
-
-        //send review to google sheets or database here
         
         feather.replace();
     }
