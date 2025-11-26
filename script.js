@@ -151,6 +151,15 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         
         reviewsContainer.prepend(reviewCard);
+
+        //send review to server (mock)
+        windows.alert('Review submitted:', review)
+
+        //sent review to email here (mock)
+
+        //send review to google reviews here
+
+        //send review to google sheets or database here
         
         feather.replace();
     }
