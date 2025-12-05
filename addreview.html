@@ -230,7 +230,7 @@ form.addEventListener('submit', e => {
   formData.append('timestamp', localTimestamp);
 
   fetch(scriptURL, { method: 'POST', body: formData })
-    .then(response => {alert("Thank you! Form is submitted" ); resetForm();})
+    .then(response => {alert("Thank you! Review is submitted" ); resetForm();})
     .then(() => { window.location.reload(); })
     .catch(error => console.error('Error!', error.message));
 });
@@ -238,4 +238,5 @@ form.addEventListener('submit', e => {
 
   </script>
  
+
 </html>
