@@ -3,74 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rate & Review Glowfully</title>
+    <title>Rate & Rave - Share Your Feedback</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
-<body class="bg-gray-50 min-h-screen">
-    <custom-header></custom>
-    <a href="index.html" class="text-pink-900 hover:text-pink-500 transition">Homepage</a>
+
+<style>
+
     
-    <main class="container mx-auto px-4 py-12">
-        <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-md overflow-hidden p-8">
-            <h1 class="text-3xl font-bold text-gray-800 mb-6">Share Your Experience</h1>
-            
-            <div class="mb-8">
-                <h2 class="text-xl font-semibold text-gray-700 mb-4">Rate Our Service</h2>
-                <div class="flex items-center space-x-2 mb-4" id="starRating">
-                    <!-- Stars will be inserted here by JavaScript -->
-                </div>
-                <p class="text-sm text-gray-500">Tap to rate from 1 (poor) to 5 (excellent)</p>
-            </div>
-            
-            <form id="reviewForm" class="space-y-6">
-                <div>
-                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
-                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Optional">
-                </div>
-                
-                <div>
-                    <label for="review" class="block text-sm font-medium text-gray-700 mb-1">Your Review</label>
-                    <textarea id="review" name="review" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Tell us about your experience..." required></textarea>
-                </div>
-                
-                <div class="flex items-center">
-                    <input type="checkbox" id="anonymous" name="anonymous" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
-                    <label for="anonymous" class="ml-2 block text-sm text-gray-700">Post anonymously</label>
-                </div>
-                
-                <button  type="submit" class="w-full bg-pink-600 hover:bg-pink-700 text-white font-medium py-3 px-4 rounded-lg transition duration-200 flex items-center justify-center">
-                    <i data-feather="send" class="mr-2"></i> Submit Review
-                </button>
-            </form>
-        </div>
-        
-        <div class="max-w-3xl mx-auto mt-12">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6">Top Reviews</h2>
-            <div id="reviewsContainer" class="space-y-6">
-                <!-- Reviews will be loaded here -->
-                <div class="text-center py-12 text-gray-500" id="loadingReviews">
-                    Loading reviews...
-                </div>
-            </div>
-        </div>
-    </main>
-    
-    <custom-footer></custom-footer>
-    
-    <script> 
-        reviewsContainer.appendChild(reviewCard);
-    </script>
-    <script src="script.js"></script>
-    <script>feather.replace();</script>
 
 
+#submit{
+	border: none;
+	background-color: rgb(255, 0, 195);
+	color: white;
+	width: 200px;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+#submit:hover{
+	background-color: #480461;
+}
+.star {
+  width: 32px;
+  height: 32px;
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.star.selected {
+  color: gold;
+}
+
+.star.hovered {
+  color: orange;
+}
+.rating-container {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+input.error-border,
+textarea.error-border {
+  border: 2px solid red !important;
+}
+
+
+
+
+
+
+</style>
+
+
+
+<body class="bg-gray-200 min-h-screen">
+  <a href="index.html" class="text-pink-900 hover:text-pink-500 transition">Homepage</a>
+  <div class="container mt-14 bg-indigo-400 flex justify-center overflow-hidden mx-auto px-4 py-12 max-w-2xl box-shadow rounded-xl">
+    <form method="post" action="" name="contact-form">
+      <h1 class="text-3xl font-bold text-white mt-4">Rate Your Experience</h1>
+      <p class="text-indigo-100 mt-2 mb-8">We'd love to hear your feedback!</p>
+
+      <div id="star-rating" class="flex justify-center space-x-2 flex gap-2 cursor-pointer">
+        <i data-star="1" class="star" data-feather="star"></i>
+        <i data-star="2" class="star" data-feather="star"></i>
+        <i data-star="3" class="star" data-feather="star"></i>
+        <i data-star="4" class="star" data-feather="star"></i>
+        <i data-star="5" class="star" data-feather="star"></i>
+      </div>
+      <p class="mb-6 flex justify-center text-sm text-gray-500">Tap to rate from 1 (poor) to 5 (excellent)</p>
+
+      <!-- Hidden input where selected rating is stored -->
+      <p class="error" id="rating-error"></p>
+      <input type="hidden" name="your-rating" id="rating-value">
+
+      <input type="text" name="your-number" id="your-number" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Number">
+      <p class="error" id="number-error"></p>
+
+      <input type="email" name="your-email" id="your-email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-indigo-500 focus:border-indigo-500" placeholder="your@email.com">
+      <p class="error" id="email-error"></p>
+
+      <textarea name="message" id="message" rows="7" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Tell us about your experience..."></textarea>
+      <p class="error" id="message-error"></p>
+
+      <input type="submit" value="Submit" id="submit">
+		</form>
+	</div>
 
 
 
 
 
 </body>
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+  feather.replace(); // initialize feather icons
+
+  const stars = document.querySelectorAll(".star");
+  const ratingInput = document.getElementById("rating-value");
+  let currentRating = 0;
+
+  stars.forEach(star => {
+    const value = parseInt(star.getAttribute("data-star"));
+
+    // Hover effect
+    star.addEventListener("mouseover", () => {
+      stars.forEach(s => s.classList.remove("hovered"));
+      for (let i = 0; i < value; i++) {
+        stars[i].classList.add("hovered");
+      }
+    });
+
+    // Remove hover when leaving star area
+    star.addEventListener("mouseout", () => {
+      stars.forEach(s => s.classList.remove("hovered"));
+    });
+
+    // Click to select rating
+    star.addEventListener("click", () => {
+      currentRating = value;
+      ratingInput.value = value;
+
+      stars.forEach(s => s.classList.remove("selected"));
+      for (let i = 0; i < value; i++) {
+        stars[i].classList.add("selected");
+      }
+    });
+  });
+});
+
+
+
+function validateForm() {
+  let valid = true;
+
+  // Fields
+  const rating = document.getElementById("rating-value");
+  const number = document.getElementById("your-number");
+  const email = document.getElementById("your-email");
+  const message = document.getElementById("message");
+
+  // Errors
+  const ratingError = document.getElementById("rating-error");
+  const numberError = document.getElementById("number-error");
+  const emailError = document.getElementById("email-error");
+  const messageError = document.getElementById("message-error");
+
+  // Reset
+  document.querySelectorAll(".error").forEach(e => e.innerText = "");
+  document.querySelectorAll(".error-border").forEach(el => el.classList.remove("error-border"));
+
+  // Validate rating
+  if (!rating.value || rating.value == 0) {
+    ratingError.innerText = "Please select a star rating.";
+    valid = false;
+  }
+
+  // Validate phone number
+  if (number.value.trim().length < 7 || !/^[0-9]+$/.test(number.value)) {
+    numberError.innerText = "Enter a valid phone number.";
+    number.classList.add("error-border");
+    valid = false;
+  }
+
+  // Validate email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email.value)) {
+    emailError.innerText = "Enter a valid email.";
+    email.classList.add("error-border");
+    valid = false;
+  }
+
+  // Validate message
+  if (message.value.trim().length < 3) {
+    messageError.innerText = "Message must be at least 3 characters.";
+    message.classList.add("error-border");
+    valid = false;
+  }
+
+  return valid;
+}
+
+
+
+function resetForm() {
+    const form = document.forms['contact-form'];
+    form.reset(); // clears all input fields
+}
+
+
+
+
+
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyoGapQwCfs8jxutvI4l7fMFa6kndF6VbAu-XwHwl5Yi8O19jVgxgvyfsoOl_ryfN0t/exec';
+const form = document.forms['contact-form'];
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+
+  if (!validateForm()) {
+    return; // stop submission
+  }
+  
+
+  // Create a new FormData object from the form
+  const formData = new FormData(form);
+
+  // Get local timestamp in YYYY-MM-DD HH:MM:SS format
+  const now = new Date();
+  const localTimestamp = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')} ` +
+                         `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
+
+  // Append local timestamp
+  formData.append('timestamp', localTimestamp);
+
+  fetch(scriptURL, { method: 'POST', body: formData })
+    .then(response => {alert("Thank you! Form is submitted" ); resetForm();})
+    .then(() => { window.location.reload(); })
+    .catch(error => console.error('Error!', error.message));
+});
+
+
+  </script>
+ 
 </html>
